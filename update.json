@@ -1,9 +1,9 @@
 ﻿{
   "app": "wcclaw",
   "version": "0.1.2",
-  "notes": "优化 IM 精简展示、任务模板市场、本地自动更新（支持官网 JSON + GitHub Release）。",
+  "notes": "优化 IM 精简展示、任务模板市场、本地自动更新（支持官网 JSON + GitHub Release/Raw update.json）。",
   "package_url": "https://github.com/cuiwenchu/wcclaw/releases/download/v0.1.2/WcClaw-0.1.2-win64.zip",
-  "package_sha256": "58A8D9822FAA79FFCD2AE845DA4DDEDCEE2A63E03260B989FB4B528855BB28F2",
+  "package_sha256": "2DC75365E6B8E2A124B7D7D0AD3FD771BC51D589A02663961D7CE87DF018D16D",
   "force": false,
-  "published_at": "2026-04-02T19:00:00+08:00"
+  "published_at": "2026-04-02T19:05:00+08:00"
 }

@@ -2077,6 +2077,19 @@ class WcClawDesktop(QMainWindow):
                 except Exception as exc:
                     errors.append(f"github: {exc}")
 
+                try:
+                    raw_url = f"https://raw.githubusercontent.com/{repo}/main/update.json"
+                    raw_resp = requests.get(raw_url, timeout=8)
+                    if raw_resp.status_code < 400 and raw_resp.text.strip():
+                        raw_payload = raw_resp.json()
+                        raw_ver = str(raw_payload.get("version", "")).strip()
+                        if raw_ver:
+                            raw_payload["source"] = "github-update-json"
+                            raw_payload["has_update"] = is_version_newer(raw_ver, APP_VERSION)
+                            candidates.append(raw_payload)
+                except Exception:
+                    pass
+
             if not candidates:
                 return {"ok": False, "error": " | ".join(errors) or "没有可用更新源", "data": None}
 
